@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+  planetcardano-cardano-sl:
+    build: .
+    container_name: planetcardano-cardano-sl-1.1.1
+    volumes:
+      - /cardano/state-wallet-mainnet:/home/cardano/cardano-sl/state-wallet-mainnet
+      - /cardano/state-wallet-mainnet/tls:/home/cardano/cardano-sl/state-wallet-mainnet/tls
