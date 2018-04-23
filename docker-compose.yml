@@ -2,6 +2,7 @@ version: '2'
 
 services:
   planetcardano-cardano-sl:
+    image: planetcardano-cardano-sl-1.1.1
     build: .
     container_name: planetcardano-cardano-sl-1.1.1
     volumes:
