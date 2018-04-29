@@ -3,7 +3,6 @@ version: '2'
 services:
   cardano-sl:
     image: planetcardano/cardano-sl:1.1.1-2
-    build: .
     ports:
      - "8090:8090"
     volumes:

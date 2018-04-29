@@ -1,18 +1,40 @@
-
-### Run a Cardano settlement layer node
-Run a very lean Cardano settlement node. This is an alternative to having to [do it yourself](https://github.com/input-output-hk/cardano-sl/blob/master/docs/how-to/build-cardano-sl-and-daedalus-from-source-code.md).
-
-### Usage
-```
-docker pull planetcardano/cardano-sl
-docker up -d
-curl -sfk https://localhost:8090/api/settings/sync/progress | jq
-```
-
-## Requirements
-This container requires the following paths to exist with write permissions
-* /cardano/state-wallet-mainnet
-* /cardano/state-wallet-mainnet-tls
+## Run a Cardano settlement layer node
+Run a very lean Cardano settlement node. This is an alternative to having to [do it yourself](https://github.com/input-output-hk/cardano-sl/blob/master/docs/how-to/build-cardano-sl-and-daedalus-from-source-code.md). We've worked hard to make this as simple as possible, so that it is the most stable, easily deployed and smallest footprint of a Cardano node we could manage.
 
 ## Usage
-`docker-compose up --build -d`
+#### Pre Requisites
+If you're running an Ubuntu box, you can use [this script]() to set up a suitable Docker environment. Either way, you'll need Docker installed.
+
+#### Run the container
+```
+# First, set up some directories we'll use as our volumes
+# You're free to change these, just be sure to change the commands below
+sudo mkdir -p /cardano/state-wallet-mainnet && sudo chmod -R 777 /cardano/state-wallet-mainnet
+
+docker pull planetcardano/cardano-sl
+docker run -d -v /cardano/state-wallet-mainnet:/home/cardano/cardano-sl/state-wallet-mainnet -p "8090:8090" planetcardano/cardano-sl:1.1.1-2
+curl -sfk https://localhost:8090/api/settings/sync/progress
+```
+
+Full source code, including an example [docker-compose.yml](https://github.com/PlanetCardano/cardano-sl/blob/master/docker-compose.yml) are available on our [Github](https://github.com/planetcardano)
+
+## About
+Brought to you with love from [Planet Cardano](planetcardano.io)
+
+Please come and chat with us on [Telegram](t.me/planetcardano)
+
+## Contributing
+Please contribute! Anyone that adds a line of code gets a 🍺. Anyone that can remove a line of code gets 🍺🍺🍺🍺🍺🍺!
+
+We want this image to be as simple as possible, so removing complexity is important to us. So is version pinning everything.
+
+If you want to contribute to Cardano and aren't sure where to begin, please [get in touch](t.me/planetcardano) and we'll help you somehow.
+
+
+### Technical Resources
+[Daedalus](https://daedaluswallet.io/)
+
+[Cardano Settlement Layer Source Code](https://github.com/input-output-hk/cardano-sl)
+
+[Cardano Settlement Layer Documentation](https://cardanodocs.com/technical)
+
