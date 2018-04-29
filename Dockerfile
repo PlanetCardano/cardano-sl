@@ -22,4 +22,9 @@ WORKDIR cardano-sl
 RUN git checkout 1.1.1
 RUN . /home/cardano/.nix-profile/etc/profile.d/nix.sh && nix-build -A connectScripts.mainnetWallet -o connect-to-mainnet
 
+# This makes the wallet bind to the container interface that is then mapped through to the host
+RUN sed -ur -i 's/--wallet-address 127.0.0.1/--wallet-address 0.0.0.0/' connect-to-mainnet
+
+EXPOSE 8090
+
 CMD ./connect-to-mainnet
