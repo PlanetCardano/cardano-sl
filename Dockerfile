@@ -19,7 +19,7 @@ RUN curl https://nixos.org/nix/install | sh
 WORKDIR /home/cardano
 RUN git clone https://github.com/input-output-hk/cardano-sl.git
 WORKDIR cardano-sl
-RUN git checkout 1.1.1
+RUN git checkout debc5a846cda872fcdc3e21a0d893672c1bb109c #April 30, 2018. API v1 beta.
 RUN . /home/cardano/.nix-profile/etc/profile.d/nix.sh && nix-build -A connectScripts.mainnetWallet -o connect-to-mainnet
 
 # This makes the wallet bind to the container interface that is then mapped through to the host

@@ -16,7 +16,7 @@ docker run -d -v /cardano/state-wallet-mainnet:/home/cardano/cardano-sl/state-wa
 curl -sfk https://localhost:8090/api/settings/sync/progress
 ```
 
-Full source code, including an example [docker-compose.yml](https://github.com/PlanetCardano/cardano-sl/blob/master/docker-compose.yml) are available on our [Github](https://github.com/planetcardano)
+Full source code, including an example [docker-compose.yml](https://github.com/PlanetCardano/cardano-sl/blob/master/docker-compose.yml) are available on our [Github](https://github.com/planetcardano). This version of the container supports a beta release of the v1 API, which is [documented here](https://cardanodocs.com/technical/wallet/api/v1).
 
 ## About
 Brought to you with love from [Planet Cardano](planetcardano.io)
