@@ -3,7 +3,7 @@ Run a very lean Cardano settlement node. This is an alternative to having to [do
 
 ## Usage
 #### Pre Requisites
-If you're running an Ubuntu box, you can use [this script]() to set up a suitable Docker environment. Either way, you'll need Docker installed.
+If you're running an Ubuntu box, you can use [this script](https://gist.github.com/EdwardPrentice/1bb589c50260cf030aaed95d3e5fdaa6) to set up a suitable Docker environment. Either way, you'll need Docker installed.
 
 #### Run the container
 ```
